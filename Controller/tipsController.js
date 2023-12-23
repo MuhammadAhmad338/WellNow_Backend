@@ -13,7 +13,7 @@ const tipsController = async (req, res) => {
     tipslist.push(doc.data());
   });
 
-  res.status(200).json({tips: tipslist});
+  res.status(200).json(tipslist);
 }
 
 module.exports = { tipsController };
