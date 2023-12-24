@@ -1,5 +1,5 @@
-const express = require("express");
 const cors = require("cors");
+const express = require("express");
 const router = require("./Routes/userRoutes");
 const palmRouter = require("./Routes/palmRoutes");
 const tipsRouter = require("./Routes/tipsRoutes");
