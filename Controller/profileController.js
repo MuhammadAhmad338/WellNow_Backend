@@ -4,7 +4,7 @@ const {getStorage, uploadBytes, getDownloadURL, ref, uploadString} = require("fi
 const storage = getStorage(app);
 
 const uploadImage = async (req, res) => {
-    const { image } = req.body;
+    const image = req.body;
    console.log(image);
     try {
         
