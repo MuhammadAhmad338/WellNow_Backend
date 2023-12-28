@@ -9,7 +9,7 @@ const uploadImage = async (req, res) => {
     try {
         
         const storageRef = ref(storage, 'profile_pics/');
-        await uploadString(storageRef, image);
+        await uploadBytes(storageRef, image);
         res.status(200).json({message: "Image uploaded successfully"});
     } catch (error) {
         console.log(error);
