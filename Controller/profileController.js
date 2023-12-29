@@ -4,7 +4,7 @@ const {getStorage, uploadBytes, getDownloadURL, ref} = require("firebase/storage
 const storage = getStorage(app);
 
 const uploadImage = async (req, res) => {
-    const { image }  = req.body;
+    const image = req.file;
     console.log(image);
     try {
         const storageRef = ref(storage, 'profile_pics/' + image);
