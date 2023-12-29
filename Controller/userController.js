@@ -38,7 +38,8 @@ const loginUser = async (req, res) => {
     if (userRecord.user) {
       const user = await  getDoc(doc(db, "users", userRecord.user.uid)); 
       const username = user.data().username;
-      res.status(200).json({username, email, user_uid: userRecord.user.uid, message: "User is successfully signed in"});
+      const imageUrl = user.data().imageUrl;
+      res.status(200).json({username, email, user_uid: userRecord.user.uid, imageUrl, message: "User is successfully signed in"});
     } else {
       res.status(401).json({ message: "Invalid Credentials!!" });
     }
