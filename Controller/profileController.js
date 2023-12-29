@@ -7,7 +7,7 @@ const uploadImage = async (req, res) => {
     const { image }  = req.body;
     console.log(image);
     try {
-        const storageRef = ref(storage, 'profile_pics/' + image.name);
+        const storageRef = ref(storage, 'profile_pics/' + image);
         await uploadBytes(storageRef, image);
         const url = await getDownloadURL(storageRef);
         console.log(url);
