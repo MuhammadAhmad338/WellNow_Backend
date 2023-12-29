@@ -7,9 +7,10 @@ const uploadImage = async (req, res) => {
     const { image } = req.body;
    console.log(image);
     try {
-        const imageBuffer = Buffer.from(image, 'base64');
-        const storageRef = ref(storage, 'profile_pics/' + new Date().getTime() + '.png');
-        await uploadBytes(storageRef, imageBuffer);
+        const storageRef = ref(storage, 'profile_pics/' + image.name);
+        await uploadBytes(storageRef, image);
+        const url = await getDownloadURL(storageRef);
+        console.log(url);
         res.status(200).json({message: "Image uploaded successfully"});
     } catch (error) {
         console.log(error);
