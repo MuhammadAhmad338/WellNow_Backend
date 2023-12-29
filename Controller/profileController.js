@@ -6,6 +6,7 @@ const storage = getStorage(app);
 const uploadImage = async (req, res) => {
     const image = req.file;
     console.log(image);
+    console.log(req.body);
     try {
         const storageRef = ref(storage, 'profile_pics/' + image.name);
         await uploadBytes(storageRef, image);
