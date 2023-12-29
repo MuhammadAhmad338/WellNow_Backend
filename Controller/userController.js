@@ -20,7 +20,7 @@ const creatingUser = async (req, res) => {
         email: email
       };
       await setDoc(doc(db, "users", userRecord.user.uid), data);
-      res.status(200).json({username, email, message: "User has been successfully created!"});
+      res.status(200).json({username, email, user_uid: userRecord.user.uid, message: "User has been successfully created!"});
     } else {
       res.status(401).json({ message: "This email is already in use!!!" });
     }
