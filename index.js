@@ -4,6 +4,7 @@ const router = require("./Routes/userRoutes");
 const palmRouter = require("./Routes/palmRoutes");
 const tipsRouter = require("./Routes/tipsRoutes");
 const imageRouter = require("./Routes/imageRoutes");
+const medicalRouter = require("./Routes/medicalRoutes");
 const app = express();
 
 const PORT = parseInt(process.env.PORT) || 8080;
@@ -15,6 +16,7 @@ app.use("/api/users", router);
 app.use("/api", palmRouter);
 app.use("/api", tipsRouter);
 app.use("/api", imageRouter);
+app.use("/api", medicalRouter);
 
 app.listen(PORT, () => {
   console.log(`Server is Listening at the the port ${PORT}`);
