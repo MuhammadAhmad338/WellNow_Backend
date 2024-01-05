@@ -1,4 +1,5 @@
 const app = require("../api/api");
+const { getFirestore, collection, getDocs, addDoc } = require("firebase/firestore");
 const db = getFirestore(app);
 
 const get_medical_records = async (req, res) => {
