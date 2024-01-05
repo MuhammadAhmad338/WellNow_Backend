@@ -1,16 +1,19 @@
 const cors = require("cors");
+const bodyParser = require("body-parser");
 const express = require("express");
 const router = require("./Routes/userRoutes");
 const palmRouter = require("./Routes/palmRoutes");
 const tipsRouter = require("./Routes/tipsRoutes");
 const imageRouter = require("./Routes/imageRoutes");
 const medicalRouter = require("./Routes/medicalRoutes");
+
 const app = express();
 
 const PORT = parseInt(process.env.PORT) || 8080;
 
 app.use(express.json());
 app.use(cors());
+bodyParser.json();
 
 app.use("/api/users", router);
 app.use("/api", palmRouter);
