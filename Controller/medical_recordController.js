@@ -22,15 +22,16 @@ const get_medical_records = async (req, res) => {
 //Post medical_record
 const post_medical_record = async (req, res) => {
   try {
-    const medical_record = req.body;
-    console.log(medical_record);
+    const { url } = req.body;
+    console.log(url);
     const medical_recordRef = await addDoc(
       collection(db, "medical_record"),
-      medical_record
+      url
     );
     res.status(200).json(medical_recordRef);
   } catch (error) {
     console.log(error);
   }
 };
+
 module.exports = { get_medical_records, post_medical_record };
