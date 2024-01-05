@@ -23,7 +23,7 @@ const get_medical_records = async (req, res) => {
 const post_medical_record = async (req, res) => {
   try {
     const medical_record = req.body;
-   consele.log(medical_record);
+    console.log(medical_record);
     const medical_recordRef = await addDoc(
       collection(db, "medical_record"),
       medical_record
